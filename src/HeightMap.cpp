@@ -22,7 +22,7 @@
 #include <vtkTexture.h>
 #include <vtkJPEGReader.h>
 
-// Callback for the slider to adjust the scale factor
+/* // Callback for the slider to adjust the scale factor
 class SliderCallback : public vtkCallbackCommand {
 public:
     static SliderCallback* New() {
@@ -37,7 +37,7 @@ public:
 
     vtkSmartPointer<vtkWarpScalar> warpScalar;
 };
-
+ */
 int main(int argc, char* argv[]) {
     if (argc < 2) {
         std::cerr << "Usage: " << argv[0] << " <bathymetry.vtk>" << std::endl;
@@ -101,7 +101,7 @@ int main(int argc, char* argv[]) {
     renderer->SetBackground(0.1, 0.2, 0.4);  // Dark blue background
     renderWindow->Render();
 
-    // Step 8: Create a slider widget for adjusting the scale factor
+    /* // Step 8: Create a slider widget for adjusting the scale factor
     vtkSmartPointer<vtkSliderRepresentation2D> sliderRep = vtkSmartPointer<vtkSliderRepresentation2D>::New();
     sliderRep->SetMinimumValue(0.0);
     sliderRep->SetMaximumValue(50.0);
@@ -128,7 +128,7 @@ int main(int argc, char* argv[]) {
     sliderCallback->warpScalar = warpScalar;
     sliderWidget->AddObserver(vtkCommand::InteractionEvent, sliderCallback);
 
-    sliderWidget->EnabledOn();
+    sliderWidget->EnabledOn(); */
 
     // Step 9: Start the interaction
     renderWindowInteractor->Start();
